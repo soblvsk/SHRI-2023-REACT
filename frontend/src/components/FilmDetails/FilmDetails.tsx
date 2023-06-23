@@ -17,7 +17,14 @@ export const FilmDetails: FunctionComponent<Props> = ({ item }) => {
 
   return (
     <div className={styles['film__details']}>
-      <Image className={styles['film__image']} src={item.posterUrl} alt={item.title} width={400} height={500} />
+      <Image
+        className={styles['film__image']}
+        src={item.posterUrl}
+        alt={item.title}
+        width={400}
+        height={500}
+        priority={true}
+      />
       <div className={styles['film-information']}>
         <div className={styles['film-information__top']}>
           <div className={styles['film__block']}>

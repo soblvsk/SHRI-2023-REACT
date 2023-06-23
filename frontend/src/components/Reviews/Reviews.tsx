@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 import Image from 'next/image';
-import avatar from '../../../public/user.png';
+import avatar from '/public/user.png';
 
 import styles from './styles.module.css';
 import classnames from 'classnames';
