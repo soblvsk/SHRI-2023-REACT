@@ -1,0 +1,40 @@
+.review {
+  padding: 24px;
+  display: flex;
+  gap: 32px;
+  background-color: var(--white);
+  color: var(--primary-gray);
+  border-radius: 8px;
+}
+
+.review__block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.review__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review__image {
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.review__user {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.review__rating {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.review__bottom {
+  font-size: 16px;
+  line-height: 24px;
+}

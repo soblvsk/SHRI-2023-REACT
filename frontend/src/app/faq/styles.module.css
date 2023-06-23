@@ -1,0 +1,23 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.faq__top {
+  padding: 24px;
+  background-color: var(--white);
+  color: var(--primary-gray);
+  border-radius: 8px;
+}
+
+.faq__title {
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.faq__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
