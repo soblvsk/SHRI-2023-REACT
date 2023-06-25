@@ -9,7 +9,6 @@ import { Cinema, Movie, Options } from '../../lib/interfaces';
 import { localizeGenre } from '../../lib/utils';
 import { useDispatch } from 'react-redux';
 import { filteredMoviesActions } from '../../redux/features/filtersMovies';
-import { moviesActions } from '../../redux/features/movies';
 
 import styles from './styles.module.css';
 import classnames from 'classnames';
@@ -54,7 +53,9 @@ export const Filters: FunctionComponent<Props> = ({ movies, cinemas }) => {
 
     if (searchValue) {
       const searchQuery = searchValue.toLowerCase().replace(/\s/g, '');
-      filtered = filtered.filter((movie) => movie.title.toLowerCase().replace(/\s/g, '').includes(searchQuery));
+      filtered = filtered.filter((movie) =>
+        movie.title.toLowerCase().replace(/\s/g, '').includes(searchQuery),
+      );
     }
 
     if (genreValue) {
@@ -73,7 +74,6 @@ export const Filters: FunctionComponent<Props> = ({ movies, cinemas }) => {
 
   useEffect(() => {
     function getData() {
-      dispatch(moviesActions.setMovies(filteredMovies));
       dispatch(filteredMoviesActions.setFilteredMovies(filteredMovies));
       const allGenres = movies.flatMap((movie) => movie.genre);
       const uniqueGenres = Array.from(new Set(allGenres));
