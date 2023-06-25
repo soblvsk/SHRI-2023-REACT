@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { cartReducer } from '@/redux/features/cart';
-import { moviesReducer } from '@/redux/features/movies';
 import { filteredMoviesReducer } from '@/redux/features/filtersMovies';
 import { logger } from '@/redux/middleware/logger';
 import { movieApi } from '@/redux/services/movieApi';
@@ -9,7 +8,6 @@ import { cinemaApi } from '@/redux/services/cinemaApi';
 
 export const store = configureStore({
   reducer: {
-    movies: moviesReducer,
     filteredMovie: filteredMoviesReducer,
     cart: cartReducer,
     [movieApi.reducerPath]: movieApi.reducer,
