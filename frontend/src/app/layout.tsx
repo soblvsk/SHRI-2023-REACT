@@ -8,11 +8,11 @@ import classnames from 'classnames';
 
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+
 const roboto = Roboto({
   weight: ['400', '500', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin', 'cyrillic'],
-  display: 'swap',
   variable: '--font-roboto',
 });
 
