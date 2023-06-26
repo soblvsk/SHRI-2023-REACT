@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { notFound } from 'next/navigation';
 import { selectTotalAmount } from '../../redux/features/cart/selector';
 import { RootState } from '../../redux/store';
-import { selectMovies } from '../../redux/features/movies/selector';
 import { useGetMoviesQuery } from '../../redux/services/movieApi';
 import { NotFound } from '../../components/NotFound/NotFound';
 import { FilmCard } from '../../components/FilmCard/FilmCard';
