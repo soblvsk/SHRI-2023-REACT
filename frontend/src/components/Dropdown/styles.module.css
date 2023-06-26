@@ -48,6 +48,7 @@
 }
 
 .dropdown__item {
+  font-family: var(--font-sf);
   display: flex;
   padding: 12px;
   width: 100%;
