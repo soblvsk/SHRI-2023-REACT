@@ -1,13 +1,21 @@
-import { Movie } from '@/lib/interfaces';
+import { Movie } from '@/constants/interfaces';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const movieApi = createApi({
-  reducerPath: 'movieApi',
+  reducerPath: 'movieAPi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/api/' }),
   endpoints: (builder) => ({
-    getMovies: builder.query<Movie[], void>({ query: () => 'movies' }),
-    getMovie: builder.query<Movie, string>({ query: (movieId) => `movie?movieId=${movieId}` }),
+    getMovies: builder.query<Movie[], void>({ query: () => ({ url: 'movies' }) }),
+    getMoviesByCinema: builder.query<Movie[], void>({
+      query: (cinemaId) => ({
+        url: 'movies',
+        params: {
+          cinemaId,
+        },
+      }),
+    }),
+    getMovie: builder.query<Movie, void>({ query: (movieId) => `movie?movieId=${movieId}` }),
   }),
 });
 
-export const { useGetMoviesQuery, useGetMovieQuery } = movieApi;
+export const { useGetMoviesQuery, useGetMovieQuery, useGetMoviesByCinemaQuery } = movieApi;
