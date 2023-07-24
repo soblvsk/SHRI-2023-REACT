@@ -1,0 +1,13 @@
+.root {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 23px;
+}
+
+.filters {
+  position: sticky;
+  top: 84px;
+  height: 100vh;
+  background-color: var(--white);
+  border-radius: 8px;
+}
