@@ -1,0 +1,36 @@
+.filters {
+  &__sticky {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+    top: 84px;
+    width: 408px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--black);
+  }
+
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-sf);
+
+  &__label {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--black);
+  }
+}
