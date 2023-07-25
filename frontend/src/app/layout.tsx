@@ -1,13 +1,12 @@
+import { Layout } from '@/components/Layout/components';
+import './globals.scss';
+import { StoreProvider } from '@/redux/provider';
+
+import classnames from 'classnames';
+
 import { Roboto } from 'next/font/google';
 import localFont from 'next/font/local';
 import { Metadata } from 'next';
-import { StoreProvider } from '../redux/StoreProvider';
-
-import './globals.css';
-import classnames from 'classnames';
-
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
 
 const roboto = Roboto({
   weight: ['400', '500', '700'],
@@ -19,27 +18,28 @@ const roboto = Roboto({
 const sfProText = localFont({
   src: [
     {
-      path: './fonts/SFProText/SFProText-Regular.woff2',
+      path: '../../public/fonts/SFProText/SFProText-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './fonts/SFProText/SFProText-RegularItalic.woff2',
+      path: '../../public/fonts/SFProText/SFProText-RegularItalic.woff2',
       weight: '400',
       style: 'italic',
     },
     {
-      path: './fonts/SFProText/SFProText-Medium.woff2',
+      path: '../../public/fonts/SFProText/SFProText-Medium.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: './fonts/SFProText/SFProText-Semibold.woff2',
+      path: '../../public/fonts/SFProText/SFProText-Semibold.woff2',
       weight: '600',
       style: 'normal',
     },
   ],
   variable: '--font-sf',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -52,11 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body className={classnames(roboto.variable, sfProText.variable)}>
         <StoreProvider>
-          <Header />
-          <main>
-            <div className='container page__container'>{children} </div>
-          </main>
-          <Footer />
+          <Layout>{children}</Layout>
         </StoreProvider>
       </body>
     </html>
