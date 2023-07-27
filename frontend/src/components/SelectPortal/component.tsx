@@ -1,13 +1,11 @@
 import { FunctionComponent, ReactNode, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-interface Props {
+export const SelectPortal: FunctionComponent<{
   children: ReactNode;
   visible: boolean;
   onClose: () => void;
-}
-
-export const SelectPortal: FunctionComponent<Props> = ({ children, visible, onClose }) => {
+}> = ({ children, visible, onClose }) => {
   useEffect(() => {
     document.addEventListener('scroll', onClose, true);
 
