@@ -2,11 +2,7 @@ import { Movies } from '@/components/Movies/components';
 import { fetchMovies } from '@/services/api';
 import React, { FunctionComponent } from 'react';
 
-interface Props {
-  cinemaId: string;
-}
-
-export const MoviesContainer: FunctionComponent<Props> = async ({ cinemaId }) => {
+export const MoviesContainer: FunctionComponent<{ cinemaId: string }> = async ({ cinemaId }) => {
   const movies = await fetchMovies(cinemaId);
   return <Movies movies={movies} />;
 };
