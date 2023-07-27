@@ -1,20 +1,41 @@
-.root {
+.counter {
   display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .modal {
-  background-color: white;
-  padding: 8px 10px;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  &__content {
+    padding: 24px;
+    background-color: var(--white);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 
-.modalTitle {
-  margin-bottom: 10px;
-}
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--black);
+  }
 
-.modalAction:not(:last-child) {
-  margin-right: 10px;
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  &__descr {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &__bottom {
+    display: flex;
+    gap: 8px;
+  }
 }
