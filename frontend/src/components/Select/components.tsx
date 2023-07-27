@@ -8,19 +8,12 @@ interface Option {
   title: string;
 }
 
-interface Props {
+export const Select: FunctionComponent<{
   defaultValue?: string;
   onChange: (value: string) => void;
   options?: Option[];
   placeHolder?: string;
-}
-
-export const Select: FunctionComponent<Props> = ({
-  defaultValue,
-  onChange,
-  options = [],
-  placeHolder = '',
-}) => {
+}> = ({ defaultValue, onChange, options = [], placeHolder = '' }) => {
   const [value, setValue] = useState(defaultValue);
   const [isOpened, setIsOpened] = useState(false);
   const selectRef = useRef<HTMLButtonElement>(null);
