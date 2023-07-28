@@ -1,9 +1,5 @@
 import React, { FunctionComponent } from 'react';
 
-interface Props {
-  movieId: string;
-}
-
-export const CartPage: FunctionComponent<Props> = ({ movieId }) => {
+export const CartPage: FunctionComponent<{ movieId: string }> = ({ movieId }) => {
   return <div></div>;
 };
