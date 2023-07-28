@@ -8,7 +8,7 @@ export interface Cinema {
   movieIds: string[];
 }
 
-export interface Movie {
+export interface Film {
   title: string;
   posterUrl: string;
   releaseYear: number;
@@ -20,7 +20,7 @@ export interface Movie {
   reviewIds: string[];
 }
 
-export interface Review {
+export interface FeedBack {
   id: string;
   name: string;
   text: string;
@@ -34,7 +34,8 @@ export interface Card {
   genre: string;
 }
 
-export interface Options {
-  id: string;
-  name: string;
+export interface FAQ {
+  id: number;
+  title: string;
+  descr: string;
 }
