@@ -11,12 +11,10 @@ import { MOVIE_GENRE, MOVIE_GENRES } from '@/constants/movie';
 import { Cinema } from '@/constants/interfaces';
 import { Input } from '@/components/Input/component';
 
-interface Props {
-  cinemas: Cinema[];
-  className?: string;
-}
-
-export const MovieFilters: FunctionComponent<Props> = ({ cinemas, className }) => {
+export const MovieFilters: FunctionComponent<{ cinemas: Cinema[]; className?: string }> = ({
+  cinemas,
+  className,
+}) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
