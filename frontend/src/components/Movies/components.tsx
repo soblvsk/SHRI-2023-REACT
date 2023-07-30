@@ -5,9 +5,9 @@ import { MovieCard } from '../MovieCard/components';
 
 import styles from './styles.module.scss';
 import { useSearchParams } from 'next/navigation';
-import { Movie } from '@/constants/interfaces';
+import { Film } from '@/constants/interfaces';
 
-export const Movies: FunctionComponent<{ movies: Movie[] }> = ({ movies }) => {
+export const Movies: FunctionComponent<{ movies: Film[] }> = ({ movies }) => {
   const searchParams = useSearchParams();
 
   if (!movies?.length) {
