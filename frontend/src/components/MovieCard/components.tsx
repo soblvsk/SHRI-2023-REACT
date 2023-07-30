@@ -6,21 +6,28 @@ import classNames from 'classnames';
 import Image from 'next/image';
 import { MovieCounterContainer } from '@/components/MovieCounter/container';
 import Link from 'next/link';
-import { Movie } from '@/constants/interfaces';
+import { Film } from '@/constants/interfaces';
 
-export const MovieCard: FunctionComponent<{ movie: Movie }> = ({ movie }) => {
+export const MovieCard: FunctionComponent<{ movie: Film }> = ({ movie }) => {
   if (!movie) {
     return null;
   }
 
   return (
-    <div className={classNames(styles.root)}>
-      <Image className={styles.poster} src={movie.posterUrl || ''} width='54' height='80' alt='poster' />
-      <div className={styles.info}>
-        <Link href={`/movie/${movie.id}`} className={styles.title}>
+    <div className={classNames(styles.film)}>
+      <Image
+        className={styles.film__img}
+        src={movie.posterUrl || ''}
+        width='100'
+        height='120'
+        alt='poster'
+        priority={true}
+      />
+      <div className={styles.film__info}>
+        <Link href={`/film/${movie.id}`} className={styles.film__title}>
           {movie.title}
         </Link>
-        <span className={styles.genre}>{MOVIE_GENRE[movie.genre]}</span>
+        <span className={styles.film__genre}>{MOVIE_GENRE[movie.genre]}</span>
       </div>
       <MovieCounterContainer movieId={movie.id} />
     </div>
