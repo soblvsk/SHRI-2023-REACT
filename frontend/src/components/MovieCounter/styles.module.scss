@@ -25,6 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-weight: 600;
     font-size: 20px;
     line-height: 20px;
   }
@@ -37,5 +38,15 @@
   &__bottom {
     display: flex;
     gap: 8px;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+
+    &:hover {
+      color: var(--orange);
+    }
   }
 }
