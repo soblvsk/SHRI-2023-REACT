@@ -1,44 +1,29 @@
 import { Metadata } from 'next';
-import Spoilers from '../../components/Spoilers/Spoilers';
 
-import styles from './styles.module.css';
-import classnames from 'classnames';
+import { questions } from '@/constants/data';
+import { Accordion } from '@/components/Accordion/component';
+import { Spoiler } from '@/components/Spoiler/component';
+
+import styles from './styles.module.scss';
 
 export const metadata: Metadata = {
   title: 'FAQ',
 };
 
-const faq = [
-  {
-    title: 'Что такое Билетопоиск?',
-    descr:
-      'Мы — крупнейший сервис о кино в рунете. На нем вы сможете посмотреть фильмы и сериалы, купить билеты в кино, узнать рейтинги популярных видео и интересные факты, поставить фильмам оценки, написать рецензии и дополнить описание фильмов.',
-  },
-  {
-    title: 'Какой компании принадлежит Билетопоиск?',
-    descr:
-      'Мы — крупнейший сервис о кино в рунете. На нем вы сможете посмотреть фильмы и сериалы, купить билеты в кино, узнать рейтинги популярных видео и интересные факты, поставить фильмам оценки, написать рецензии и дополнить описание фильмов.',
-  },
-  {
-    title: 'Как купить билет на Билетопоиск?',
-    descr:
-      'Мы — крупнейший сервис о кино в рунете. На нем вы сможете посмотреть фильмы и сериалы, купить билеты в кино, узнать рейтинги популярных видео и интересные факты, поставить фильмам оценки, написать рецензии и дополнить описание фильмов.',
-  },
-  {
-    title: 'Как оставить отзыв на Билетопоиск?',
-    descr:
-      'Мы — крупнейший сервис о кино в рунете. На нем вы сможете посмотреть фильмы и сериалы, купить билеты в кино, узнать рейтинги популярных видео и интересные факты, поставить фильмам оценки, написать рецензии и дополнить описание фильмов.',
-  },
-];
-
 export default function Faq() {
   return (
     <div className={styles.faq}>
       <div className={styles['faq__top']}>
-        <h2 className={classnames('font-semibold', styles['faq__title'])}>Вопросы-ответы</h2>
+        <h2 className={styles.faq__title}>Вопросы-ответы</h2>
       </div>
       <div className={styles['faq__bottom']}>
-        <Spoilers items={faq} />
+        <Accordion>
+          {questions.map((question, idx) => (
+            <div key={idx}>
+              <Spoiler item={question} />
+            </div>
+          ))}
+        </Accordion>
       </div>
     </div>
   );
