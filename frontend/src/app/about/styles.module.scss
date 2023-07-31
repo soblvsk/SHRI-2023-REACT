@@ -1,0 +1,18 @@
+.about {
+  padding: 24px;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 8px;
+
+  &__title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  &__descr {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 16px;
+  }
+}
