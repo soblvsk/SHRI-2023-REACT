@@ -1,12 +1,8 @@
 import React from 'react';
 import { MoviesPage } from '@/pagesComponents/Movies/component';
 
-interface Props {
-  searchParams: {
-    cinemaId: string;
-  };
-}
+export const revalidate = 60;
 
-export default function Home({ searchParams }: Props) {
+export default function Home({ searchParams }: { searchParams: { [key: string]: string } }) {
   return <MoviesPage cinemaId={searchParams.cinemaId} />;
 }
