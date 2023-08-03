@@ -7,12 +7,18 @@ export const SelectPortal: FunctionComponent<{
   onClose: () => void;
 }> = ({ children, visible, onClose }) => {
   useEffect(() => {
-    document.addEventListener('scroll', onClose, true);
+    if (typeof document !== 'undefined') {
+      document.addEventListener('scroll', onClose, true);
+    }
 
-    return () => document.removeEventListener('scroll', onClose, true);
+    return () => {
+      if (typeof document !== 'undefined') {
+        document.removeEventListener('scroll', onClose, true);
+      }
+    };
   }, [onClose]);
 
-  const container = document.querySelector('#select-portal');
+  const container = typeof document !== 'undefined' ? document.querySelector('#select-portal') : null;
 
   return visible && container ? createPortal(children, container) : null;
 };
