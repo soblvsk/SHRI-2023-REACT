@@ -1,0 +1,28 @@
+.root {
+  padding: 24px 32px;
+  background-color: var(--dark-gray);
+}
+
+.footer {
+  width: 100%;
+  min-height: 86px;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 38px;
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: var(--white);
+    transition: all 0.2s;
+
+    &:hover {
+      color: var(--orange);
+    }
+  }
+}
