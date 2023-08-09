@@ -8,10 +8,8 @@ import { MovieCounterContainer } from '@/components/MovieCounter/container';
 import Link from 'next/link';
 import { Film } from '@/constants/interfaces';
 
-export const MovieCard: FunctionComponent<{ movie: Film }> = ({ movie }) => {
-  if (!movie) {
-    return null;
-  }
+export const MovieCard: FunctionComponent<{ movie: Film; isCart?: boolean }> = ({ movie, isCart }) => {
+  if (!movie) return null;
 
   return (
     <div className={classNames(styles.film)}>
@@ -29,7 +27,7 @@ export const MovieCard: FunctionComponent<{ movie: Film }> = ({ movie }) => {
         </Link>
         <span className={styles.film__genre}>{MOVIE_GENRE[movie.genre]}</span>
       </div>
-      <MovieCounterContainer movieId={movie.id} />
+      <MovieCounterContainer movieId={movie.id} isCart={isCart} />
     </div>
   );
 };

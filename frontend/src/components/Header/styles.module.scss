@@ -1,0 +1,53 @@
+.root {
+  padding: 24px 32px;
+  background-color: var(--dark-gray);
+}
+
+.header__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  text-decoration: none;
+
+  color: var(--white);
+  transition: all 0.2s;
+
+  &:hover {
+    color: var(--orange);
+  }
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white);
+
+  &__amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    background: var(--orange);
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    transition: all 0.2s;
+  }
+
+  &:hover .cart__amount {
+    background: var(--orange-hover);
+  }
+}

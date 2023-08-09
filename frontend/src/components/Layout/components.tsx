@@ -11,7 +11,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <main className={styles.content}>{children}</main>
       <Footer />
       <div id='select-portal' className={styles.selectPortal} />
-      <div id='modal-portal' className={styles.selectPortal} />
+      <div id='modal-portal' className={styles.modalPortal} />
     </div>
   );
 };

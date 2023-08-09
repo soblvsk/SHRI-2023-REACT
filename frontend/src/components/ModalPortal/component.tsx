@@ -8,14 +8,18 @@ export const ModalPortal: FunctionComponent<{
   visible: boolean;
 }> = ({ children, visible }) => {
   useEffect(() => {
-    document.body.style.overflow = visible ? 'hidden' : 'unset';
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = visible ? 'hidden' : 'unset';
+    }
 
     return () => {
-      document.body.style.overflow = 'unset';
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = 'unset';
+      }
     };
   }, [visible]);
 
-  const container = document.querySelector('#modal-portal');
+  const container = typeof document !== 'undefined' ? document.querySelector('#modal-portal') : null;
 
   return visible && container
     ? createPortal(
