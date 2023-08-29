@@ -8,6 +8,7 @@ import styles from './styles.module.scss';
 import { MovieCard } from '../MovieCard/components';
 import { selectCartModule } from '@/redux/features/cart/selectors';
 import { Film } from '@/constants/interfaces';
+import { NotFound } from '../NotFound/component';
 
 export const CartItems: FunctionComponent<{ movies: Film[] }> = ({ movies }) => {
   const cart = useSelector((state: RootState) => selectCartModule(state));
@@ -16,10 +17,13 @@ export const CartItems: FunctionComponent<{ movies: Film[] }> = ({ movies }) => 
   console.log(cartMovies);
   return (
     <div className={styles.cart}>
-      <div className={styles.cart__items}></div>
-      {cartMovies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} isCart={true} />
-      ))}
+      <div className={styles.cart__items}>
+        {cartMovies.length ? (
+          cartMovies.map((movie) => <MovieCard key={movie.id} movie={movie} isCart={true} />)
+        ) : (
+          <NotFound />
+        )}
+      </div>
     </div>
   );
 };
