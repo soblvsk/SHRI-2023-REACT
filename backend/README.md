@@ -1,6 +1,6 @@
-# Описание простого апи
+# Описание API
 
-Запускаем сервер командой node server.js (если из корня, то node simple_api/server.js)
+Запускаем сервер командой node server.js (если из корня, то node backend/server.js)
 
 Дефолтно запускается сервер на http://localhost:3001.
 
