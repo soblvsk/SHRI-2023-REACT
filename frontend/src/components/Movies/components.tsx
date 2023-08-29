@@ -6,6 +6,7 @@ import { MovieCard } from '../MovieCard/components';
 import styles from './styles.module.scss';
 import { useSearchParams } from 'next/navigation';
 import { Film } from '@/constants/interfaces';
+import { NotFound } from '../NotFound/component';
 
 export const Movies: FunctionComponent<{ movies: Film[] }> = ({ movies }) => {
   const searchParams = useSearchParams();
@@ -23,11 +24,15 @@ export const Movies: FunctionComponent<{ movies: Film[] }> = ({ movies }) => {
     );
   };
 
+  const filteredMovies = movies.filter(filterMovie);
+
   return (
     <div className={styles.films}>
-      {movies.filter(filterMovie).map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
+      {filteredMovies.length ? (
+        filteredMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)
+      ) : (
+        <NotFound />
+      )}
     </div>
   );
 };
